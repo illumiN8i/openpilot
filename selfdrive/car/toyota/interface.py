@@ -170,9 +170,9 @@ class CarInterface(CarInterfaceBase):
       ret.wheelbase = 2.68986
       ret.steerRatio = 14.3
       tire_stiffness_factor = 0.7933
-      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.6], [0.1]]
-      ret.mass = 3585. * CV.LB_TO_KG + STD_CARGO_KG # mean between normal and hybrid
-      ret.lateralTuning.pid.kf = 0.00007818594
+      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.15], [0.05]]
+      ret.mass = 3750. * CV.LB_TO_KG + STD_CARGO_KG 
+      ret.lateralTuning.pid.kf = 0.00004
 
     elif candidate in [CAR.COROLLA_TSS2, CAR.COROLLAH_TSS2]:
       stop_and_go = True
