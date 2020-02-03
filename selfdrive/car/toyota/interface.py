@@ -420,7 +420,7 @@ class CarInterface(CarInterfaceBase):
       events.append(create_event('steerTempUnavailable', [ET.NO_ENTRY, ET.WARNING]))
     if self.CS.low_speed_lockout and self.CP.openpilotLongitudinalControl:
       events.append(create_event('lowSpeedLockout', [ET.NO_ENTRY, ET.PERMANENT]))
-    if ret.cruiseState.standstill:
+    if self.CS.pcm_acc_status == 7:
       events.append(create_event('resumeRequired', [ET.WARNING]))
     if ret.vEgo < self.CP.minEnableSpeed and self.CP.openpilotLongitudinalControl:
       events.append(create_event('speedTooLow', [ET.NO_ENTRY]))
